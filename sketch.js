@@ -6,16 +6,6 @@ function setup() {
 
 function draw() {
 	background(225);
-	textSize(32);
-	fill(180);
-	text(hour(), 10, 30);
-	fill(100);
-	text(minute(), 10, 60);
-	fill(0);
-	text(second(), 10, 90);
-
-	stroke(51);
-
 
 	noStroke();
 	fill(color('rgba(107, 191, 130, 0.5)'));
@@ -23,6 +13,7 @@ function draw() {
 		circle(h/2, w/2, 150);
 	}
 	else if(hour()%12 == 2) {
+		stroke(51);
 		line((h/2)+150, (w/2)+60, (h/2)-100, (w/2)-100);
 		line((h/2)+100, (w/2)+100, (h/2)-100, (w/2)-100);
 	}
@@ -33,10 +24,11 @@ function draw() {
 		polygon(h/2, w/2, 150, hour()%12);
 	}
 
+	noStroke();
+
 	fill(color('rgba(189, 55, 75, 0.5)'));
 	circle(h/2, w/2, (minute()/59)*w*.9);
 
-	noStroke();
 	fill(color('rgba(0, 0, 255, 0.2)'));
 	circle(h/2, w/2, (second()/59)*w*.9);
 }
